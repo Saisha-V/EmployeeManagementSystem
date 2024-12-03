@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="icon" href="https://www.qsstechnosoft.com/wp-content/themes/qss/assets/img/favicon.ico" type="image/x-icon">
+    <style>
+        /* CSS style */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #000000;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #0078D4;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .logo {
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+
+            nav ul li {
+                margin: 1rem 0;
+            }
+
+                nav ul li a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 0.5rem 1rem;
+                    display: block;
+                    text-align: center;
+                    background-color: #005bb5;
+                    border-radius: 5px;
+                }
+
+                    nav ul li a:hover {
+                        background-color: #004a9c;
+                    }
+
+        .main-content {
+            flex: 1;
+            padding: 1rem;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .main-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        #search-box {
+            padding: 0.5rem;
+            width: 80%;
+        }
+
+        #add-user {
+            padding: 0.5rem 1rem;
+            background-color: #0078D4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+            table th, table td {
+                border: 1px solid #ddd;
+                text-align: left;
+                padding: 0.5rem;
+            }
+
+            table th {
+                background-color: #0078D4;
+                color: white;
+            }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="https://www.qsstechnosoft.com/wp-content/uploads/2024/01/logo-white.svg" alt="Company Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#">Employees</a></li>
+                <li><a href="#">Roles</a></li>
+                <li><a href="#">Departments</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1 class="main-header">Employee Management System</h1>
+        </header>
+        <main>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." id="search-box">
+                <button id="search-user">Search</button>
+                <button id="add-user">Add User</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Role</th>
+                        <th>Date of Joining</th>
+                        <th>Manager</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Populate table rows dynamically -->
+                </tbody>
+            </table>
+        </main>
+    <!-- Footer -->
+     <footer>
+        <p>&copy; 2024 Employee Management System</p>
+     </footer>
+    </div>
+
+</body>
+
+</html>
