@@ -18,19 +18,19 @@ app.MapGet("/users/{id}", (int id) =>
     return $"Reading users with ID:{id}";
 });
 
-app.MapPost("/users", () =>
-{
-    return "Creating new users";
-});
+//app.MapPost("/users", () =>
+//{
+//    return "Creating new users";
+//});
 
-app.MapPut("/users/{id}", (int id) =>
-{
-    return $"Updating users with ID:{id}";
-});
+//app.MapPut("/users/{id}", (int id) =>
+//{
+//    return $"Updating users with ID:{id}";
+//});
 
-app.MapDelete("/users/{id}", (int id) =>
-{
-    return $"Deleting users with ID:{id}";
-});
+//app.MapDelete("/users/{id}", (int id) =>
+//{
+//    return $"Deleting users with ID:{id}";
+//});
 
 app.Run();
