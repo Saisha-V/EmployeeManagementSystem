@@ -1,36 +1,28 @@
+using EmployeeManagementSystem.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddControllers();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Enable Swagger (Optional for testing)
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseStaticFiles(); 
-app.UseDefaultFiles(); 
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 app.UseHttpsRedirection();
-
-
-app.MapGet("/users", async context =>
-{
-    context.Response.ContentType = "text/html";
-    await context.Response.SendFileAsync("frontend/index.html");
-});
-
-app.MapGet("/users/{id}", (int id) =>
-{
-    return $"Reading users with ID:{id}";
-});
-
-//app.MapPost("/users", () =>
-//{
-//    return "Creating new users";
-//});
-
-//app.MapPut("/users/{id}", (int id) =>
-//{
-//    return $"Updating users with ID:{id}";
-//});
-
-//app.MapDelete("/users/{id}", (int id) =>
-//{
-//    return $"Deleting users with ID:{id}";
-//});
+app.UseAuthorization();
+app.MapControllers();
 
 app.Run();
